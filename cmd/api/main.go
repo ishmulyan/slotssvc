@@ -21,6 +21,7 @@ func main() {
 		ReadTimeout     time.Duration `default:"5s" envconfig:"READ_TIMEOUT"`
 		WriteTimeout    time.Duration `default:"5s" envconfig:"WRITE_TIMEOUT"`
 		ShutdownTimeout time.Duration `default:"5s" envconfig:"SHUTDOWN_TIMEOUT"`
+		JWTSecret       string        `default:"" envconfig:"JWT_SECRET"`
 	}{}
 
 	if err := envconfig.Process("", &cfg); err != nil {
@@ -29,7 +30,7 @@ func main() {
 
 	srv := http.Server{
 		Addr:         cfg.Host,
-		Handler:      handler(log),
+		Handler:      handler([]byte(cfg.JWTSecret)),
 		ReadTimeout:  cfg.ReadTimeout,
 		WriteTimeout: cfg.WriteTimeout,
 	}
