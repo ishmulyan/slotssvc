@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/ishmulyan/slotssvc/internal/atkinsdiet"
+	"github.com/ishmulyan/slotssvc/pkg/atkinsdiet"
 	"github.com/julienschmidt/httprouter"
 )
 
