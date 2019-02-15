@@ -150,35 +150,6 @@ func mapSymbolsToStops(stops [3][5]int8) [3][5]symbol {
 	return symbols
 }
 
-// func checkAllLinesAllEvents(symbols [3][5]symbol, lines int) []int {
-// 	winVector := make([]int, len(paytable))
-// 	var line [5]symbol
-// 	for i := 0; i < lines; i++ {
-// 		payline := paylines[i]
-// 		for reelID := 0; reelID < 5; reelID++ {
-// 			line[reelID] = symbols[payline[reelID]][reelID]
-// 		}
-// 		prizeLoc := checkWinSingleLine(line)
-// 		if prizeLoc != -1 {
-// 			winVector[prizeLoc]++
-// 		}
-// 	}
-// 	return winVector
-// }
-
-// func checkWinSingleLine(line [5]symbol) int16 {
-// 	// var win int16
-// 	numPays := len(paytable)
-// 	for payID := 0; payID < numPays; payID++ {
-// 		p := paytable[payID]
-// 		if checkLine(line, p.n, p.symbol) {
-// 			// win = p.win
-// 			return int16(payID)
-// 		}
-// 	}
-// 	return -1
-// }
-
 // caclculateLinesWin calculates win amount for symbols with bet and lines.
 func caclculateLinesWin(symbols [3][5]symbol, bet, lines int) int64 {
 	var (
