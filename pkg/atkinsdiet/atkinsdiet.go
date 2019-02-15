@@ -43,7 +43,6 @@ func New() *Machine {
 }
 
 // Spin does a spin with bet per line 'bet' and number of lines 'nline', returns its total win and spins.
-// Spins are []SpinResult but returns as []interface{} to satisfy a generic interface.
 func (m *Machine) Spin(bet, lines int) (SpinStats, []SpinResult, error) {
 	var st SpinStats
 
