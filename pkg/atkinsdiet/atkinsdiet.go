@@ -46,7 +46,7 @@ func New() *Machine {
 func (m *Machine) Spin(bet, lines int) (SpinStats, []SpinResult, error) {
 	var st SpinStats
 
-	if bet < 0 {
+	if bet <= 0 {
 		return st, nil, ErrNonPositiveBet
 	}
 

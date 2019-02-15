@@ -9,6 +9,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/ishmulyan/slotssvc/cmd/api/handlers"
 	"github.com/kelseyhightower/envconfig"
 )
 
@@ -30,7 +31,7 @@ func main() {
 
 	srv := http.Server{
 		Addr:         cfg.Host,
-		Handler:      handler([]byte(cfg.JWTSecret)),
+		Handler:      handlers.API([]byte(cfg.JWTSecret)),
 		ReadTimeout:  cfg.ReadTimeout,
 		WriteTimeout: cfg.WriteTimeout,
 	}
