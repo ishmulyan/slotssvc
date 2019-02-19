@@ -56,7 +56,7 @@ var paytable = [34]struct {
 	{10, 3, symBacon},
 	{10, 3, symMayonnaise},
 	{2, 5, symAtkins},
-	{2, 3, symSteak},
+	{3, 2, symSteak},
 	{2, 2, symHam},
 	{2, 2, symBuffaloWings},
 }

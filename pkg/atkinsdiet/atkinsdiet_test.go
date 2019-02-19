@@ -237,6 +237,71 @@ func Test_caclculateLinesWin(t *testing.T) {
 			},
 			40,
 		},
+		{
+			"",
+			args{
+				[3][5]symbol{
+					{symHam, symAtkins, symSteak, symSausage, symCheese},
+					{symSausage, symButter, symHam, symCheese, symBuffaloWings},
+					{symBacon, symEggs, symButter, symEggs, symBacon},
+				},
+				5,
+				20,
+			},
+			170,
+		},
+		{
+			"",
+			args{
+				[3][5]symbol{
+					{symMayonnaise, symMayonnaise, symBacon, symEggs, symBacon},
+					{symHam, symHam, symCheese, symHam, symScale},
+					{symCheese, symButter, symEggs, symSausage, symSteak},
+				},
+				5,
+				20,
+			},
+			30,
+		},
+		{
+			"",
+			args{
+				[3][5]symbol{
+					{symMayonnaise, symHam, symCheese, symBacon, symBuffaloWings},
+					{symHam, symCheese, symMayonnaise, symMayonnaise, symBacon},
+					{symSausage, symBacon, symButter, symSausage, symScale},
+				},
+				5,
+				20,
+			},
+			20,
+		},
+		{
+			"",
+			args{
+				[3][5]symbol{
+					{symButter, symBacon, symAtkins, symScale, symMayonnaise},
+					{symBuffaloWings, symMayonnaise, symBuffaloWings, symButter, symSausage},
+					{symBacon, symBuffaloWings, symBacon, symBacon, symEggs},
+				},
+				5,
+				20,
+			},
+			135,
+		},
+		{
+			"",
+			args{
+				[3][5]symbol{
+					{symCheese, symBuffaloWings, symMayonnaise, symBacon, symBuffaloWings},
+					{symEggs, symSteak, symCheese, symMayonnaise, symBacon},
+					{symAtkins, symSausage, symSausage, symSausage, symScale},
+				},
+				5,
+				20,
+			},
+			420,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
